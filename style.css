@@ -381,12 +381,6 @@ nav ul li a:hover::after {
 
 /* Contact */
 
-#contact {
-    margin-top: 700px;
-    padding: 80px 0;
-    color: #000000;
-}
-
 .contact-left{
     flex-basis: 35%;
 }
