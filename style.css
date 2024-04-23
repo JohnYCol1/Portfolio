@@ -1,591 +1,283 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Lexend Deca", sans-serif;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body{
-    background: #FFF8DC;
-    color: black;
-}
-
-.header {
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-image: url(images/backgroudn.png);
-}
-
-.container {
-    padding: 10px 10%;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.logo {
-    width: 140px;
-}
-
-nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-
-}
-
-nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    font-size: 18px;
-    position: relative;
-}
-
-nav ul li a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #000000;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-.header-text{
-    margin-top: 20%;
-    font-size: 30px;
-
-}
-
-.header-text h1{
-    font-size: 60px;
-    margin-top: 20px;
-}
-
-.header-text h1 span{
-    color: #CD604D;
-}
-
-.header-text .quote{
-    position: relative;
-    transform: translateX(2.5rem);
-}
-
-.header-text .quote:before {
-    content: '';
-    width: 32px;
-    height: 2px;
-    background-color: #000000;
-    position: absolute;
-    left: -2.5rem;
-    top: 1rem;
-    z-index: 5;
-}
-
-/* about */
-
-#about {
-    margin-top: 200px;
-    padding: 80px 0;
-    color: #000000;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.about-col-1{
-    flex-basis: 35%;
-}
-
-.about-col-1 img{
-    width: 100%;
-    border-radius: 10px;
-}
-
-.about-col-2 {
-    flex-basis: 60%;
-}
-
-.sub-title {
-    font-size: 60px;
-    font-weight: 600;
-    color: #CD604D;
-    margin-bottom: 10px;
-}
-
-.tab-titles {
-    color: #CD604D;
-    display: flex;
-    margin: 20px 0 40px;
-}
-
-.tab-links {
-    
-    margin-right: 50px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    position: relative;
-}
-
-.tab-links::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #CD604D;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    transition: 0.5s;
-}
-
-.tab-links.active-link::after {
-    width: 50%;
-}
-
-.tab-contents ul li{
-    list-style: none;
-    margin: 10px 0;
-}
-
-.tab-contents ul li span{
-    color: #CD604D;
-    font-size: 14px;
-}
-
-.tab-contents{
-    display: none;
-}
-
-.tab-contents.active-tab{
-    display: block;
-}
-
-/* services */
-
-#services {
-    padding: 30px 0;
-}
-
-.services-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-    
-}
-
-.services-list div {
-    background:#CD604D;
-    padding: 40px;
-    font-size: 13px;
-    font-weight: 300;
-    border-radius: 5px;
-    height: 500px;
-    transition: background 0.5s, transform 0.5s;
-}
-
-.services-list div i{
-    font-size: 50px;
-    margin-bottom: 30px;
-}
-
-.services-list div h2{
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-.services-list div a{
-    text-decoration: none;
-    color: #000000;
-    font-size: 12px;
-    margin-top: 20px;
-    display: inline-block;
-}
-
-.services-list div:hover {
-    background: #ffffff;
-    transform: translateY(-10px);
-}
-
-/* slider */
-
-
-#imageslider {
-    margin-top: 200px;
-    padding: 80px 0;
-    color: #000000;
-}
-
-.slidercontainer
-{
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.slider{
-    position: absolute;
-    inset: 80px 200px 80px 80px;
-    background: #ccc;
-    border-radius: 20px;
-}
-
-.slider .slides {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 240px;
-    height: 320px;
-    background: var(--img);
-    background-size: cover;
-    background-position: center;
-    transition: 0.5s;
-    border-radius: 20px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-}
-
-.slider .slides:nth-child(1),
-.slider .slides:nth-child(2) {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    transform: translateY(0);
-    box-shadow: 0 25px 50px rgba(0,0,0,0);
-    background-size: cover;
-}
-
-.slider .slides:nth-child(3){
-    left: calc(50% + 240px);
-    background-size: cover;
-}
-.slider .slides:nth-child(4){
-    left: calc(50% + 500px);
-    background-size: cover;
-}
-.slider .slides:nth-child(5){
-    left: calc(50% + 760px);
-    background-size: cover;
-}
-.slider .slides:nth-child(6){
-    left: calc(50% + 1020px);
-    background-size: cover;
-    opacity: 0;
-}
-/* Hover effect to hide other slides */
-.slider:hover .slides:not(:nth-child(1)):not(:nth-child(2)) {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* Reset hover state for main picture */
-.slider .slides:nth-child(1):hover,
-.slider .slides:nth-child(2):hover {
-    opacity: 1;
-    visibility: visible;
-}
-
-.buttons {
-    position: absolute;
-    bottom: 15px;
-    display: flex;
-    gap: 20px;
-}
-
-.buttons span {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    background: #111;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-}
-
-.buttons span::before{
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border-top: 4px solid #fff;
-    border-left: 4px solid #fff;
-    transform: rotate(315deg) translate(2px,2px);
-}
-
-.buttons span:nth-child(2)::before{
-    transform: rotate(135deg) translate(2px,2px);
-}
-.buttons span:active {
-    opacity: 0.5;
-}
-.content {
-    position: relative;
-    padding: 40px;
-    max-width: 600px;
-    transition: 0.25s;
-    transition-delay: 0s;
-    transform: translateY(40px);
-    z-index: 1000;
-    opacity: 0;
-}
-.content h2 {
-    font-size: 4rem;
-    color: #fff;
-}
-
-.content p {
-    color: #fff;
-
-}
-
-.slider .slides:nth-child(1) .content,
-.slider .slides:nth-child(2) .content{
-    opacity: 1;
-    transform: translateY(0px);
-    transition-delay: 0.5s;
-}
-
-
-/* Contact */
-
-.contact-left{
-    flex-basis: 35%;
-}
-.contact-right{
-    flex-basis: 60%;
-}
-.contact-left p{
-    margin-top: 30px;
-}
-
-.contact-left p i{
-    color: #ff004f;
-    margin-right: 15px;
-    font-size: 25px;
-}
-
-.social-icons {
-    margin-top: 30px;
-}
-
-.social-icons a{
-    text-decoration: none;
-    font-size: 30px;
-    margin-right: 15px;
-    color: #ababab;
-    display: inline-block;
-    transition: transform 0.5s;
-}
-.social-icons a:hover {
-    color: #ff004f;
-    transform: translateY(-5px);
-}
-
-.btn.btn2{
-    display: inline-block;
-    background: #ff004f;
-}
-.contact-right form{
-    width: 100%;
-}
-
-form input, form textarea {
-    width: 100%;
-    border: 0;
-    outline: none;
-    background: #262626;
-    padding: 15px;
-    margin: 15px 0;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 6px;
-}
-
-form .btn2{
-    padding: 14px 60px;
-    font-size: 18px;
-    margin-top: 20px;
-    cursor: pointer;
-
-}
-
-
-/* timeline */
-
-.timeline ul {
-
-    padding: 50px 0;
-  }
-  
-  .timeline ul li {
-    list-style-type: none;
-    position: relative;
-    width: 6px;
-    margin: 0 auto;
-    padding-top: 50px;
-    background: #000000;
-  }
-  
-  .timeline ul li::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: inherit;
-    z-index: 1;
-  }
-  
-  .timeline ul li div {
-    position: relative;
-    bottom: 0;
-    width: 400px;
-    padding: 15px;
-    background: #000000;
-    color: #fff;
-  }
-  
-  .timeline ul li div::before {
-    content: "";
-    position: absolute;
-    bottom: 7px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-  }
-  
-  .timeline ul li:nth-child(odd) div {
-    left: 45px;
-  }
-  
-  .timeline ul li:nth-child(odd) div::before {
-    left: -15px;
-    border-width: 8px 16px 8px 0;
-    border-color: transparent #000000 transparent transparent;
-  }
-  
-  .timeline ul li:nth-child(even) div {
-    left: -439px;
-  }
-  
-  .timeline ul li:nth-child(even) div::before {
-    right: -15px;
-    border-width: 8px 0 8px 16px;
-    border-color: transparent transparent transparent #000000;
-  }
-  
-  time {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  #timeline {
-    margin-top: 1200px;
-    padding: 80px 0;
-    }
-  
-  /* EFFECTS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  
-  .timeline ul li::after {
-    transition: background 0.5s ease-in-out;
-  }
-  
-  .timeline ul li.in-view::after {
-    background: #fff;
-  }
-  
-  .timeline ul li div {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .timeline ul li:nth-child(odd) div {
-    transform: translate3d(200px, 0, 0);
-  }
-  
-  .timeline ul li:nth-child(even) div {
-    transform: translate3d(-200px, 0, 0);
-  }
-  
-  .timeline ul li.in-view div {
-    transform: none;
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  
-
-@media (max-width: 900px){
-    .slider{
-        position: absolute;
-        inset: 40px 40px 200px 40px;
-    }
-    .slider .slides{
-        width: 100px;
-        height: 100px;
-        top:initial;
-        bottom: -170px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    }
-    .content h2 {
-        font-size: 2rem;
-        color: #fff;
-    }
-    .slider .slides:nth-child(1),
-    .slider .slides:nth-child(2){
-        top: initial;
-        bottom: 0px;
-    }
-    .slider .slides:nth-child(3){
-        left: 0;
-    }
-    .slider .slides:nth-child(4){
-        left: 120px;
-    }
-    .slider .slides:nth-child(5){
-        left: 240px;
-    }
-    .slider .slides:nth-child(6){
-        left: 360px;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dd21d23735.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav>
+                <img src="images/Juanito-removebg-preview.png" alt="logo">
+                <ul id="sidemenu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Future Financer</p>
+                <h1>Hello! I'm <span>Johnny Tran</span><br>from Vietnam with a 
+                    <br> Passion for <span class="text"></span></h1>
+                    <br>
+                    <p class="quote">I never dreamed about success, I <span>worked</span> for it.</p>
+            </div>
+        </div>
+    </div>
+    <!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/about us.jpg" alt="about image">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I study in APU international school, I did say I’m a pretty average student with nothing special in any subjects, but I got inspire from my dad’s business skills and his major which is finance. Think about it, making your first bucks at a young age feel like a big achievements. </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Marketing</span><br>Introducing my products.</li>
+                            <li><span>Research</span><br>Precise research.</li>
+                            <li><span>Hustler/Freelancer</span><br>Willing to take any chances/offers</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Managing Money</span><br>Selling things online.</li>
+                            <li><span>Hello</span><br>Precise research.</li>
+                            <li><span>Hustler/Freelancer</span><br>Willing to take any chances/offers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- circle -->
+    <!-- <section id="Skills">
+        <h1 class="skillsubtitle">My <span>Skills</span></h1>
+        <div class="sec">
+            <div class="container2">
+                <h1 class="heading1">Professional Skills</h1>
+                <div class="radial-bars">
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
+                            <circle class="path path-1" cx="100" cy="80" r="80"></circle>
+                        </svg>
+                        <div class="percentage">60%</div>
+                        <div class="text">Problem Solving</div>
+                    </div>
+
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
+                            <circle class="path path-2" cx="100" cy="80" r="80"></circle>
+                        </svg>
+                        <div class="percentage">70%</div>
+                        <div class="text">Creativity</div>
+                    </div>
+
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
+                            <circle class="path path-3" cx="100" cy="80" r="80"></circle>
+                        </svg>
+                        <div class="percentage">80%</div>
+                        <div class="text">Communication</div>
+                    </div>
+
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
+                            <circle class="path path-4" cx="100" cy="80" r="80"></circle>
+                        </svg>
+                        <div class="percentage">90%</div>
+                        <div class="text">Teamwork</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Services -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">Characteristic</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-brain"></i>
+                    <h2>Mindset</h2>
+                    <p>I have a strong and discipline mindset, I will work my best and locked in for the best efficient and result. I keep my money well and precies for a better future and also for my own statisfaction.</p>
+                    <a href="">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-teamspeak"></i>
+                    <h2>Teamwork/Collaborate</h2>
+                    <p>I love to do things in group and collaborating with people who have the same vision as me, I believe that having a strong teamwork, we can share, benefitm support each other in mistakes or successes.
+                    </p>
+                    <a href="">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-book"></i>
+                    <h2>Coping Mechanism</h2>
+                    <p>I have a strong and discipline mindset, I will work my best and locked in for the best efficient and result. I keep my money well and precies for a better future and also for my own statisfaction</p>
+                    <a href="">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="imageslider">
+        <div class="container">
+            <h1 class="sub-title">School Activities</h1>
+        </div>
+        <div class="slidercontainer">
+            <div class="slider">
+                <div class="slides" style="--img: url('images/IMG_9450.jpg')">
+                    <div class="content">
+                        <h2>Slide 01</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempora voluptates in perspiciatis iste deserunt temporibus adipisci expedita, quae consectetur?</p>
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('images/IMG_9466.jpg')">
+                    <div class="content">
+                        <h2>Slide 01</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempora voluptates in perspiciatis iste deserunt temporibus adipisci expedita, quae consectetur?</p>
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('images/IMG_9468.jpg')">
+                    <div class="content">
+                        <h2>Slide 01</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempora voluptates in perspiciatis iste deserunt temporibus adipisci expedita, quae consectetur?</p>
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('images/IMG_9567.jpg')">
+                    <div class="content">
+                        <h2>Slide 01</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempora voluptates in perspiciatis iste deserunt temporibus adipisci expedita, quae consectetur?</p>
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('images/about us.jpg')">
+                    <div class="content">
+                        <h2>Slide 01</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempora voluptates in perspiciatis iste deserunt temporibus adipisci expedita, quae consectetur?</p>
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('images/about us.jpg')">
+                    <div class="content">
+                        <h2>Slide 01</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tempora voluptates in perspiciatis iste deserunt temporibus adipisci expedita, quae consectetur?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <span class="prev"></span>
+                <span class="next"></span>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="slider2">
+        <div class="slides2">
+            <div class="layer">
+                <img src="images/SAT.png" alt="" class="slide2">
+                <div class="contentslider">
+                    <h1>image</h1>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+            <div class="layer">
+                <img src="images/British-Council-IELTS-Official-Test-Center-Certificate-Academia-1 (2).jpg" alt="" class="slide2">
+                <div class="contentslider">
+                    <h1>image</h1>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+            <div class="layer">
+                <img src="images/Untitled design (2).png" alt="" class="slide2">
+                <div class="contentslider">
+                    <h1>image</h1>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+    </div>
+
+    <div id="timeline">
+        <div class="container">
+            <h1 class="sub-title">School Activities</h1>
+        </div>
+          <section class="timeline">
+            <ul>
+              <li>
+                <div class="timelinediv">
+                  <time>2014</time> I study at vietnamese public school until grade 4.
+                  <!-- <img src="images/about us.jpg" alt=""> -->
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1937</time> Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi. Suspendisse finibus mauris et bibendum molestie. Aenean ex augue, varius et pulvinar in, pretium non nisi.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1940</time> Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor, at pulvinar tortor ex eget ligula. Integer eu dapibus arcu, sit amet sollicitudin eros.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1943</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1946</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+            </ul>
+          </section>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i>thoanganh496@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i>0898114035</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100081218996646"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/home?lang=vi"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://vn.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
