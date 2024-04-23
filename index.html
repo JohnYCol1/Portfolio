@@ -6,23 +6,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/dd21d23735.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body>
     <div class="header">
         <div class="container">
             <nav>
                 <img src="images/Juanito-removebg-preview.png" alt="logo">
-                <ul>
+                <ul id="sidemenu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Me</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Future Financer</p>
                 <h1>Hello! I'm <span>Johnny Tran</span><br>from Vietnam with a 
-                    <br> hustler mindset</h1>
+                    <br> Passion for <span class="text"></span></h1>
                     <br>
                     <p class="quote">I never dreamed about success, I <span>worked</span> for it.</p>
             </div>
@@ -61,6 +64,54 @@
             </div>
         </div>
     </div>
+
+    <!-- circle -->
+    <!-- <section id="Skills">
+        <h1 class="skillsubtitle">My <span>Skills</span></h1>
+        <div class="sec">
+            <div class="container2">
+                <h1 class="heading1">Professional Skills</h1>
+                <div class="radial-bars">
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
+                            <circle class="path path-1" cx="100" cy="80" r="80"></circle>
+                        </svg>
+                        <div class="percentage">60%</div>
+                        <div class="text">Problem Solving</div>
+                    </div>
+
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
+                            <circle class="path path-2" cx="100" cy="80" r="80"></circle>
+                        </svg>
+                        <div class="percentage">70%</div>
+                        <div class="text">Creativity</div>
+                    </div>
+
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
+                            <circle class="path path-3" cx="100" cy="80" r="80"></circle>
+                        </svg>
+                        <div class="percentage">80%</div>
+                        <div class="text">Communication</div>
+                    </div>
+
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
+                            <circle class="path path-4" cx="100" cy="80" r="80"></circle>
+                        </svg>
+                        <div class="percentage">90%</div>
+                        <div class="text">Teamwork</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
     <!-- Services -->
     <div id="services">
         <div class="container">
@@ -88,7 +139,7 @@
             </div>
         </div>
     </div>
-    <div id="imageslider">
+    <!-- <div id="imageslider">
         <div class="container">
             <h1 class="sub-title">School Activities</h1>
         </div>
@@ -136,17 +187,46 @@
                 <span class="next"></span>
             </div>
         </div>
+    </div> -->
+
+    <div class="slider2">
+        <div class="slides2">
+            <div class="layer">
+                <img src="images/SAT.png" alt="" class="slide2">
+                <div class="contentslider">
+                    <h1>image</h1>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+            <div class="layer">
+                <img src="images/British-Council-IELTS-Official-Test-Center-Certificate-Academia-1 (2).jpg" alt="" class="slide2">
+                <div class="contentslider">
+                    <h1>image</h1>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+            <div class="layer">
+                <img src="images/Untitled design (2).png" alt="" class="slide2">
+                <div class="contentslider">
+                    <h1>image</h1>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
     </div>
-<!-- 
+
     <div id="timeline">
         <div class="container">
-            <h1>Timeline</h1>
+            <h1 class="sub-title">School Activities</h1>
         </div>
           <section class="timeline">
             <ul>
               <li>
-                <div>
-                  <time>1934</time> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                <div class="timelinediv">
+                  <time>2014</time> I study at vietnamese public school until grade 4.
+                  <!-- <img src="images/about us.jpg" alt=""> -->
                 </div>
               </li>
               <li>
@@ -171,7 +251,7 @@
               </li>
             </ul>
           </section>
-    </div> -->
+    </div>
 
     <div id="contact">
         <div class="container">
